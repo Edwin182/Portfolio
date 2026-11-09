@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Edwin Gaitan | Portfolio{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=6">
+</head>
+
+<body>
+    <!-- Header with placeholder navigation links -->
+    <header class="site-header">
+        <h1>Edwin Gaitan<span>.</span></h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Page content -->
+    <main>
+        {% block content %}
+        {% endblock content %}s
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&copy; {% now "Y" %} Edwin Gaitan. All rights reserved.</p>
+        <nav class="nav-footer center">
+            <a href="{% url 'about_me' %}">About Me</a>
+            <a href="{% url 'projects_list' %}">Projects</a>
+            <a href="#">Experience</a>
+            <a href="#">Contact</a>
+        </nav>
+        <p class="footer-tagline">Code. Connect. Create.</p>
+    </footer>
+</body>
+</html>
