@@ -9,32 +9,36 @@
 </head>
 
 <body>
-    <!-- Header with placeholder navigation links -->
+    <!-- Header -->
     <header class="site-header">
         <h1>Edwin Gaitan<span>.</span></h1>
+
         <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="{% url 'about_me' %}">Home</a>
+            <a href="{% url 'about_me' %}">About</a>
+            <a href="{% url 'projects_list' %}">Projects</a>
+            <a href="{% url 'experience' %}">Experience</a>
+            <a href="{% url 'contact' %}">Contact</a>
         </nav>
     </header>
 
     <!-- Page content -->
     <main>
         {% block content %}
-        {% endblock content %}s
+        {% endblock content %}
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <p>&copy; {% now "Y" %} Edwin Gaitan. All rights reserved.</p>
+
         <nav class="nav-footer center">
             <a href="{% url 'about_me' %}">About Me</a>
             <a href="{% url 'projects_list' %}">Projects</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
+            <a href="{% url 'experience' %}">Experience</a>
+            <a href="{% url 'contact' %}">Contact</a>
         </nav>
+
         <p class="footer-tagline">Code. Connect. Create.</p>
     </footer>
 </body>
