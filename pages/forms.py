@@ -1,13 +1,30 @@
 from django import forms
 
+
 class ContactForm(forms.Form):
     name = forms.CharField(
-        max_length= 50, 
-        widget = forms.TextInput(attrs={'placeholder':'Your name'}))
-    email = forms.EmailField(
-        widget= forms.EmailInput(attrs= {'placeholder': 'Your email address'})
+        label="Your name",
+        max_length=50,
+        widget=forms.TextInput(attrs={
+            "placeholder": "Your full name",
+            "autocomplete": "name",
+        }),
     )
+
+    email = forms.EmailField(
+        label="Email address",
+        max_length=254,
+        widget=forms.EmailInput(attrs={
+            "placeholder": "you@example.com",
+            "autocomplete": "email",
+        }),
+    )
+
     message = forms.CharField(
-        widget= forms.Textarea(
-            attrs= {'placeholder': 'your message'})
-        )
+        label="Your message",
+        max_length=5000,
+        widget=forms.Textarea(attrs={
+            "placeholder": "Tell me about your project, opportunity, or question...",
+            "rows": 6,
+        }),
+    )

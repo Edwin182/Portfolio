@@ -1,10 +1,213 @@
-{% extends 'base.html' %}
-{% block title %} About Me {% endblock title %}
+{% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+About Edwin Gaitan | Integration and Development
+{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portfolio-pages.css' %}?v=1">
+{% endblock extra_css %}
+
 {% block content %}
+<div class="portfolio-page">
 
-<h1>About Me</h1>
-<p>Welcome to my about me page!</p>
+    <header class="portfolio-page-heading">
+        <p class="portfolio-eyebrow">About me</p>
 
+        <h1>
+            A practical path<br>
+            into <span>software.</span>
+        </h1>
 
+        <p class="portfolio-lead">
+            I connect business experience, a cybersecurity foundation,
+            and hands-on development to build useful applications.
+        </p>
+    </header>
+
+    <section
+        class="portfolio-about-grid portfolio-section"
+        aria-labelledby="background-title"
+    >
+        <div class="portfolio-story">
+            <h2 id="background-title">
+                The experience behind the code.
+            </h2>
+
+            <p>
+                I'm Edwin Gaitan, an EDI Business Systems Analyst
+                based in Southern California. For more than eight years,
+                I've worked with the data exchanges that help businesses
+                process orders, coordinate shipments, and manage invoices.
+            </p>
+
+            <p>
+                Working with IBM Sterling B2B Integrator has taught me
+                to investigate problems carefully, understand requirements,
+                and test how systems behave together. A successful technical
+                change needs to support the business process around it.
+            </p>
+
+            <p>
+                I'm now applying that approach to full-stack development.
+                My projects give me practical experience with HTML, CSS,
+                JavaScript, React, Python, Django, and APIs while I continue
+                developing my skills.
+            </p>
+
+            <p>
+                My service as a U.S. Navy Reserve Chief Petty Officer
+                also shapes how I work: take responsibility,
+                communicate clearly, and help the team move forward.
+            </p>
+
+            <div class="portfolio-actions">
+                <a
+                    class="portfolio-button"
+                    href="{% url 'projects_list' %}"
+                >
+                    Explore my projects
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <aside
+            class="portfolio-background-panel"
+            aria-labelledby="education-title"
+        >
+            <p class="portfolio-eyebrow">
+                Foundation &amp; direction
+            </p>
+
+            <h2 id="education-title">
+                Business.<br>
+                Security.<br>
+                Development.
+            </h2>
+
+            <dl class="portfolio-education">
+                <div>
+                    <dt>MBA</dt>
+                    <dd>Technology Management</dd>
+                </div>
+
+                <div>
+                    <dt>Bachelor of Science</dt>
+                    <dd>Cybersecurity</dd>
+                </div>
+
+                <div>
+                    <dt>Continued learning</dt>
+                    <dd>Full-stack software development</dd>
+                </div>
+            </dl>
+        </aside>
+    </section>
+
+    <section
+        class="portfolio-section"
+        aria-labelledby="toolkit-title"
+    >
+        <div class="portfolio-section-heading">
+            <p class="portfolio-eyebrow">My toolkit</p>
+
+            <h2 id="toolkit-title">
+                Experience I build on.
+            </h2>
+        </div>
+
+        <div class="portfolio-toolkit">
+            <article>
+                <h3>Business integrations</h3>
+                <p>
+                    EDI &amp; X12 transactions, IBM Sterling B2B Integrator,
+                    mapping, troubleshooting, and partner testing.
+                </p>
+            </article>
+
+            <article>
+                <h3>Web development</h3>
+                <p>
+                    HTML, CSS, JavaScript, React, Python, Django,
+                    and web API projects.
+                </p>
+            </article>
+
+            <article>
+                <h3>Problem solving</h3>
+                <p>
+                    Requirements analysis, clear documentation,
+                    technical communication, and a cybersecurity perspective.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section
+        class="portfolio-section portfolio-method"
+        aria-labelledby="method-title"
+    >
+        <div>
+            <p class="portfolio-eyebrow">How I work</p>
+
+            <h2 id="method-title">
+                Start with the problem.<br>
+                Follow through on the details.
+            </h2>
+        </div>
+
+        <ol>
+            <li>
+                <strong>Understand the need.</strong>
+                <span>
+                    Ask what the user or business process needs to accomplish.
+                </span>
+            </li>
+
+            <li>
+                <strong>Build with purpose.</strong>
+                <span>
+                    Keep the solution understandable and the interface clear.
+                </span>
+            </li>
+
+            <li>
+                <strong>Test the full journey.</strong>
+                <span>
+                    Check the expected result, errors,
+                    and connections between systems.
+                </span>
+            </li>
+        </ol>
+    </section>
+
+    <section
+        class="portfolio-closing"
+        aria-labelledby="about-closing-title"
+    >
+        <div>
+            <p class="portfolio-eyebrow">Let's connect</p>
+
+            <h2 id="about-closing-title">
+                Interested in working together?
+            </h2>
+
+            <p>
+                I'd welcome a conversation about software development,
+                integrations, or a project with a practical business need.
+            </p>
+        </div>
+
+        <a
+            class="portfolio-button"
+            href="{% url 'contact' %}"
+        >
+            Get in touch
+            <span aria-hidden="true">&rarr;</span>
+        </a>
+    </section>
+
+</div>
 {% endblock content %}

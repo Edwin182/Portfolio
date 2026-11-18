@@ -4,35 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Edwin Gaitan | Portfolio{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=6">
+
+    <title>
+        {% block title %}Edwin Gaitan | Portfolio{% endblock title %}
+    </title>
+
+    <meta
+        name="description"
+        content="{% block meta_description %}Edwin Gaitan's portfolio in software development, enterprise integration, and business systems.{% endblock meta_description %}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/styles.css' %}?v=6"
+    >
+
+    {% block extra_css %}{% endblock extra_css %}
 </head>
 
 <body>
-    <!-- Header -->
     <header class="site-header">
         <h1>Edwin Gaitan<span>.</span></h1>
 
-        <nav>
-            <a href="{% url 'about_me' %}">Home</a>
-            <a href="{% url 'about_me' %}">About</a>
+        <nav aria-label="Main navigation">
+            <a
+                href="{% url 'home' %}"
+                {% if request.resolver_match.url_name == 'home' %}
+                    aria-current="page"
+                {% endif %}
+            >Home</a>
+
+            <a
+                href="{% url 'about_me' %}"
+                {% if request.resolver_match.url_name == 'about_me' %}
+                    aria-current="page"
+                {% endif %}
+            >About</a>
+
             <a href="{% url 'projects_list' %}">Projects</a>
-            <a href="{% url 'experience' %}">Experience</a>
-            <a href="{% url 'contact' %}">Contact</a>
+
+            <a
+                href="{% url 'experience' %}"
+                {% if request.resolver_match.url_name == 'experience' %}
+                    aria-current="page"
+                {% endif %}
+            >
+                Experience
+            </a>
+
+            <a
+                href="{% url 'contact' %}"
+                {% if request.resolver_match.url_name == 'contact' %}
+                    aria-current="page"
+                {% endif %}
+            >Contact</a>
         </nav>
     </header>
 
-    <!-- Page content -->
     <main>
         {% block content %}
         {% endblock content %}
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
-        <p>&copy; {% now "Y" %} Edwin Gaitan. All rights reserved.</p>
+        <p>
+            &copy; {% now "Y" %} Edwin Gaitan.
+            All rights reserved.
+        </p>
 
-        <nav class="nav-footer center">
+        <nav class="nav-footer center" aria-label="Footer navigation">
             <a href="{% url 'about_me' %}">About Me</a>
             <a href="{% url 'projects_list' %}">Projects</a>
             <a href="{% url 'experience' %}">Experience</a>

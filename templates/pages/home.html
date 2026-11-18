@@ -1,0 +1,341 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Edwin Gaitan | Software Development and EDI
+{% endblock title %}
+
+{% block meta_description %}
+EDI and business systems experience meets full-stack development.
+Explore Edwin Gaitan's projects, background, and approach to building useful software.
+{% endblock meta_description %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portfolio-pages.css' %}?v=1">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="portfolio-page">
+
+    <section class="portfolio-hero" aria-labelledby="home-title">
+        <div class="portfolio-hero-copy">
+            <p class="portfolio-eyebrow">
+                EDI experience. A developer's perspective.
+            </p>
+
+            <h1 id="home-title">
+                Building software.<br>
+                <span>Connecting business.</span>
+            </h1>
+
+            <p class="portfolio-lead">
+                I'm Edwin Gaitan, an EDI Business Systems Analyst
+                building my next chapter in full-stack development.
+            </p>
+
+            <p class="portfolio-intro">
+                I bring real-world experience connecting business systems
+                to the applications I build with Python, Django,
+                JavaScript, and React.
+            </p>
+
+            <div class="portfolio-actions">
+                <a
+                    class="portfolio-button"
+                    href="{% url 'projects_list' %}"
+                >
+                    Explore my projects
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+
+                <a
+                    class="portfolio-text-link"
+                    href="{% url 'contact' %}"
+                >
+                    Get in touch
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </div>
+
+            <p class="portfolio-location">
+                Southern California
+                <span aria-hidden="true">&middot;</span>
+                Business systems to web applications
+            </p>
+        </div>
+
+        <aside
+            class="portfolio-integration"
+            aria-labelledby="integration-title"
+        >
+            <p class="portfolio-panel-label">
+                The connection behind my work
+            </p>
+
+            <h2 id="integration-title">
+                From business needs<br>
+                to working solutions.
+            </h2>
+
+            <svg
+                class="portfolio-flow"
+                viewBox="0 0 400 244"
+                role="img"
+                aria-labelledby="flow-title flow-description"
+            >
+                <title id="flow-title">
+                    Connecting business, data, and applications
+                </title>
+
+                <desc id="flow-description">
+                    A business requirement flows through data and logic
+                    into an application, with validation connecting
+                    the result back to the original need.
+                </desc>
+
+                <defs>
+                    <marker
+                        id="portfolio-arrow"
+                        viewBox="0 0 10 10"
+                        refX="8"
+                        refY="5"
+                        markerWidth="5"
+                        markerHeight="5"
+                        orient="auto-start-reverse"
+                    >
+                        <path
+                            d="M 0 0 L 10 5 L 0 10 z"
+                            fill="#66d9ff"
+                        />
+                    </marker>
+                </defs>
+
+                <path
+                    d="M100 102 H162 M238 102 H300"
+                    fill="none"
+                    stroke="#66d9ff"
+                    stroke-width="2"
+                    marker-end="url(#portfolio-arrow)"
+                />
+
+                <rect
+                    x="12"
+                    y="62"
+                    width="90"
+                    height="80"
+                    rx="12"
+                    fill="#1d3550"
+                    stroke="#456079"
+                />
+
+                <path
+                    d="M41 89 V77 H73 V89 M36 89 H78 V118 H36 Z M50 89 V97 H64 V89"
+                    fill="none"
+                    stroke="#b8efff"
+                    stroke-width="2"
+                />
+
+                <rect
+                    x="155"
+                    y="58"
+                    width="90"
+                    height="88"
+                    rx="12"
+                    fill="#66d9ff"
+                />
+
+                <path
+                    d="M182 86 L170 102 L182 118 M218 86 L230 102 L218 118 M205 80 L195 124"
+                    fill="none"
+                    stroke="#111c30"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+                <rect
+                    x="298"
+                    y="62"
+                    width="90"
+                    height="80"
+                    rx="12"
+                    fill="#1d3550"
+                    stroke="#456079"
+                />
+
+                <rect
+                    x="319"
+                    y="82"
+                    width="48"
+                    height="34"
+                    rx="3"
+                    fill="none"
+                    stroke="#b8efff"
+                    stroke-width="2"
+                />
+
+                <path
+                    d="M319 91 H367 M330 87 H333 M337 87 H340 M328 100 L334 106 L345 97"
+                    fill="none"
+                    stroke="#b8efff"
+                    stroke-width="2"
+                />
+
+                <g
+                    fill="#dcebf4"
+                    text-anchor="middle"
+                    font-size="11"
+                    font-family="Arial, sans-serif"
+                    letter-spacing="1"
+                >
+                    <text x="57" y="168">BUSINESS</text>
+                    <text x="200" y="168">DATA + LOGIC</text>
+                    <text x="343" y="168">APPLICATION</text>
+                </g>
+
+                <path
+                    d="M343 183 V207 H57 V183"
+                    fill="none"
+                    stroke="#42637a"
+                    stroke-width="1.5"
+                    stroke-dasharray="4 5"
+                    marker-end="url(#portfolio-arrow)"
+                />
+
+                <rect
+                    x="142"
+                    y="194"
+                    width="116"
+                    height="25"
+                    rx="12"
+                    fill="#111c30"
+                />
+
+                <text
+                    x="200"
+                    y="211"
+                    text-anchor="middle"
+                    fill="#8cdff5"
+                    font-size="11"
+                    font-family="Arial, sans-serif"
+                >
+                    TEST + VALIDATE
+                </text>
+            </svg>
+
+            <p class="portfolio-panel-note">
+                Understand the requirement. Trace the data.
+                Build and verify the solution.
+            </p>
+        </aside>
+    </section>
+
+    <section
+        class="portfolio-proof"
+        aria-label="Professional background"
+    >
+        <div>
+            <strong>8+ years</strong>
+            <span>EDI &amp; business systems</span>
+        </div>
+
+        <div>
+            <strong>Python &amp; Django</strong>
+            <span>Current development focus</span>
+        </div>
+
+        <div>
+            <strong>Navy Reserve</strong>
+            <span>Leadership &amp; accountability</span>
+        </div>
+    </section>
+
+    <section
+        class="portfolio-section portfolio-strengths"
+        aria-labelledby="strengths-title"
+    >
+        <div>
+            <p class="portfolio-eyebrow">What I bring</p>
+
+            <h2 id="strengths-title">
+                Technical work.<br>
+                Business context.
+            </h2>
+
+            <p>
+                I approach development with an understanding of
+                the people, processes, and data behind an application.
+            </p>
+
+            <a
+                class="portfolio-text-link"
+                href="{% url 'about_me' %}"
+            >
+                More about my background
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+
+        <div class="portfolio-strength-list">
+            <article>
+                <span class="portfolio-number" aria-hidden="true">01</span>
+
+                <div>
+                    <h3>Enterprise integration</h3>
+                    <p>
+                        EDI troubleshooting, data mapping, and trading
+                        partner testing with IBM Sterling B2B Integrator.
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <span class="portfolio-number" aria-hidden="true">02</span>
+
+                <div>
+                    <h3>Full-stack development</h3>
+                    <p>
+                        Hands-on projects in responsive interfaces,
+                        Python applications, Django, React, and web APIs.
+                    </p>
+                </div>
+            </article>
+
+            <article>
+                <span class="portfolio-number" aria-hidden="true">03</span>
+
+                <div>
+                    <h3>Clear communication</h3>
+                    <p>
+                        Translating technical issues into practical
+                        next steps for business users and technical teams.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section
+        class="portfolio-closing"
+        aria-labelledby="home-closing-title"
+    >
+        <div>
+            <p class="portfolio-eyebrow">See the work</p>
+
+            <h2 id="home-closing-title">
+                A background in systems.<br>
+                A growing portfolio of applications.
+            </h2>
+        </div>
+
+        <a
+            class="portfolio-button"
+            href="{% url 'projects_list' %}"
+        >
+            View projects
+            <span aria-hidden="true">&rarr;</span>
+        </a>
+    </section>
+
+</div>
+{% endblock content %}

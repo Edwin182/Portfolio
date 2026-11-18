@@ -1,20 +1,140 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} Contact {% endblock title %}
+{% block title %}
+Contact Edwin Gaitan | Let's Connect
+{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/portfolio-pages.css' %}?v=1">
+{% endblock extra_css %}
 
 {% block content %}
-<section class="contact-section center-column">
-    <h2>Contact Me</h2>
-    <form id="contactForm" method = "POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div class="forms-buttons">
-            <button type= "submit">Send</button>
-            <button type= "reset">Reset</button>
+<div class="portfolio-page">
+
+    <section
+        class="portfolio-contact-grid"
+        aria-labelledby="contact-title"
+    >
+        <div class="portfolio-contact-copy">
+            <p class="portfolio-eyebrow">Get in touch</p>
+
+            <h1 id="contact-title">
+                A conversation<br>
+                is a good <span>start.</span>
+            </h1>
+
+            <p class="portfolio-lead">
+                Have a development opportunity, an integration question,
+                or a project in mind? I'd like to hear about it.
+            </p>
+
+            <p>
+                Tell me a little about what you're working on
+                and how I might contribute.
+            </p>
+
+            <div class="portfolio-contact-context">
+                <p class="portfolio-small-label">
+                    Let's talk about
+                </p>
+
+                <ul>
+                    <li>Software development opportunities</li>
+                    <li>EDI and business integrations</li>
+                    <li>Technical collaboration</li>
+                </ul>
+            </div>
+
+            <a
+                class="portfolio-text-link"
+                href="https://github.com/Edwin182"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Explore my GitHub
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+
+            <p class="portfolio-location">
+                Based in Los Angeles California
+            </p>
         </div>
 
-    </form>
-</section>
+        <div class="portfolio-form-panel">
+            <h2>Send a message</h2>
 
+            <p class="portfolio-form-intro">
+                All fields are required.
+            </p>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div
+                        class="portfolio-notice portfolio-notice-success"
+                        role="status"
+                    >
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if delivery_error %}
+                <div
+                    class="portfolio-notice portfolio-notice-error"
+                    role="alert"
+                >
+                    {{ delivery_error }}
+                </div>
+            {% endif %}
+
+            {% if form.errors %}
+                <div
+                    class="portfolio-notice portfolio-notice-error"
+                    role="alert"
+                >
+                    Please correct the highlighted fields below.
+                </div>
+            {% endif %}
+
+            <form
+                id="contactForm"
+                method="post"
+                action="{% url 'contact' %}"
+            >
+                {% csrf_token %}
+
+                {{ form.non_field_errors }}
+
+                {% for field in form %}
+                    <div class="portfolio-field{% if field.errors %} portfolio-field-invalid{% endif %}">
+                        <label for="{{ field.id_for_label }}">
+                            {{ field.label }}
+                        </label>
+
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+
+                <div class="portfolio-actions portfolio-form-actions">
+                    <button class="portfolio-button" type="submit">
+                        Send message
+                        <span aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <button class="portfolio-reset" type="reset">
+                        Clear fields
+                    </button>
+                </div>
+
+                <p class="portfolio-form-note">
+                    Please don't include passwords
+                    or confidential business information.
+                </p>
+            </form>
+        </div>
+    </section>
+
+</div>
 {% endblock content %}

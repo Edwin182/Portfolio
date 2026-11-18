@@ -1,10 +1,248 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Experience | Edwin Gaitan{% endblock title %}
 
+{% block meta_description %}
+Explore Edwin Gaitan's experience in EDI and business systems,
+Navy Reserve leadership, and full-stack development projects.
+{% endblock meta_description %}
+
+{% block extra_css %}
+<link
+    rel="stylesheet"
+    href="{% static 'css/portfolio-pages.css' %}?v=2"
+>
+{% endblock extra_css %}
+
 {% block content %}
-<section>
-    <h2>Experience</h2>
-    <p>This is my experience page.</p>
-</section>
+<div class="portfolio-page">
+
+    <header class="portfolio-page-heading">
+        <p class="portfolio-eyebrow">Experience</p>
+
+        <h1>
+            Business systems.<br>
+            <span>Practical solutions.</span>
+        </h1>
+
+        <p class="portfolio-lead">
+            I bring experience in enterprise integrations,
+            team leadership, and hands-on software development
+            to the problems I solve.
+        </p>
+    </header>
+
+    <div class="portfolio-experience-layout">
+
+        <section class="portfolio-career" aria-labelledby="career-title">
+            <h2 id="career-title" class="portfolio-eyebrow">
+                My background
+            </h2>
+
+            <!-- Professional experience -->
+            <article class="portfolio-role">
+                <p class="portfolio-role-meta">
+                    Professional experience &middot; Reliance Inc.
+                </p>
+
+                <h2>EDI Business Systems Analyst</h2>
+
+                <p>
+                    I help business systems exchange accurate information
+                    so orders, shipments, and invoices can move through
+                    the processes that depend on them.
+                </p>
+
+                <ul class="portfolio-role-bullets">
+                    <li>
+                        Investigate EDI transaction failures and trace
+                        issues across business systems and trading
+                        partner connections.
+                    </li>
+
+                    <li>
+                        Develop and update IBM Sterling B2B Integrator
+                        maps, then validate the translated data against
+                        business requirements.
+                    </li>
+
+                    <li>
+                        Support X12 transactions, including purchase
+                        orders (850), ship notices (856), invoices (810),
+                        and acknowledgments (997).
+                    </li>
+
+                    <li>
+                        Troubleshoot AS2 connectivity, certificates,
+                        and communication issues with trading partners.
+                    </li>
+
+                    <li>
+                        Coordinate testing, explain technical findings,
+                        and document solutions for business users
+                        and technical teams.
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Military leadership -->
+            <article class="portfolio-role">
+                <p class="portfolio-role-meta">
+                    Leadership experience &middot; U.S. Navy Reserve
+                </p>
+
+                <h2>Chief Petty Officer</h2>
+
+                <p>
+                    Military service has shaped how I take responsibility,
+                    communicate priorities, and support a team through
+                    demanding work.
+                </p>
+
+                <ul class="portfolio-role-bullets">
+                    <li>
+                        Lead and mentor Sailors while supporting
+                        training, readiness, and professional development.
+                    </li>
+
+                    <li>
+                        Coordinate responsibilities and communicate
+                        expectations across teams.
+                    </li>
+
+                    <li>
+                        Bring accountability, attention to detail,
+                        and steady problem solving to time-sensitive
+                        situations.
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Development projects -->
+            <article class="portfolio-role">
+                <p class="portfolio-role-meta">
+                    Project experience &middot; Full-stack development training
+                </p>
+
+                <h2>
+                    Building applications from idea to implementation
+                </h2>
+
+                <p>
+                    Through coursework and portfolio projects,
+                    I'm applying my business systems background
+                    to web application development.
+                </p>
+
+                <ul class="portfolio-role-bullets">
+                    <li>
+                        Build responsive interfaces with HTML, CSS,
+                        JavaScript, and React.
+                    </li>
+
+                    <li>
+                        Develop Python applications, Django websites,
+                        and Flask web APIs.
+                    </li>
+
+                    <li>
+                        Practice working with data, forms, validation,
+                        and database-backed features.
+                    </li>
+
+                    <li>
+                        Use GitHub, user stories, acceptance criteria,
+                        and Scrum practices to organize project work.
+                    </li>
+                </ul>
+
+                <a
+                    class="portfolio-text-link"
+                    href="{% url 'projects_list' %}"
+                >
+                    See my development projects
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </article>
+        </section>
+
+        <!-- Skills sidebar -->
+        <aside
+            class="portfolio-background-panel portfolio-experience-panel"
+            aria-labelledby="skills-title"
+        >
+            <p class="portfolio-eyebrow">Skills in practice</p>
+
+            <h2 id="skills-title">
+                A bridge between<br>
+                business and technology.
+            </h2>
+
+            <dl class="portfolio-education">
+                <div>
+                    <dt>Enterprise integration</dt>
+                    <dd>
+                        IBM Sterling B2B Integrator, EDI, X12,
+                        mapping, and partner testing.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>Communication &amp; troubleshooting</dt>
+                    <dd>
+                        AS2, certificates, incident investigation,
+                        and technical documentation.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>Development toolkit</dt>
+                    <dd>
+                        HTML, CSS, JavaScript, React, Python,
+                        Django, Flask, and SQLite.
+                    </dd>
+                </div>
+
+                <div>
+                    <dt>Team contribution</dt>
+                    <dd>
+                        Requirements analysis, mentoring,
+                        coordination, and clear communication.
+                    </dd>
+                </div>
+            </dl>
+        </aside>
+
+    </div>
+
+    <!-- Contact invitation -->
+    <section
+        class="portfolio-closing"
+        aria-labelledby="experience-closing-title"
+    >
+        <div>
+            <p class="portfolio-eyebrow">Let's connect</p>
+
+            <h2 id="experience-closing-title">
+                Looking for someone who understands
+                the business behind the code?
+            </h2>
+
+            <p>
+                I'd welcome a conversation about development
+                opportunities, integrations, or technical collaboration.
+            </p>
+        </div>
+
+        <a
+            class="portfolio-button"
+            href="{% url 'contact' %}"
+        >
+            Get in touch
+            <span aria-hidden="true">&rarr;</span>
+        </a>
+    </section>
+
+</div>
 {% endblock content %}
